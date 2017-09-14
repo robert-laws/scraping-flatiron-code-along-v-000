@@ -17,9 +17,8 @@ class Scraper
     end
   end
 
-  def get_courses
+  def get_page
     # #course-grid article
-    doc = Nokogiri::HTML(@url)
-    courses = doc.css('#course-grid article')
+    @doc = Nokogiri::HTML(@url)
   end
 end
