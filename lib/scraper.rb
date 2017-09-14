@@ -5,7 +5,7 @@ require_relative './course.rb'
 
 class Scraper
   @url = 'http://learn-co-curriculum.github.io/site-for-scraping/courses'
-  
+
   def print_courses
     self.make_courses
     Course.all.each do |course|
@@ -19,9 +19,7 @@ class Scraper
 
   def get_courses
     # #course-grid article
-    html = Nokogiri::HTML(@url)
-  end  
+    doc = Nokogiri::HTML(@url)
+    courses = doc.css('#course-grid article')
+  end
 end
-
-
-
